@@ -24,3 +24,5 @@ RUN bundle config --global frozen 1 && \
 COPY . /home/app/
 
 RUN bundle exec rake assets:precompile
+
+ENTRYPOINT ["./entrypoint.sh"]
