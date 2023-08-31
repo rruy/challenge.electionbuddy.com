@@ -2,7 +2,6 @@ one:
   auditable: one
   auditable_type: Auditable
   author_user_id: MyInteger
-  author_user_email: MyString
   event: MyString
   trail: 
 
@@ -10,6 +9,5 @@ two:
   auditable: two
   auditable_type: Auditable
   author_user_id: MyInteger
-  author_user_email: MyString
   event: MyString
   trail: 
