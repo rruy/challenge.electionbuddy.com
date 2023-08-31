@@ -38,3 +38,13 @@ Run bash in order to access rails container command line:
 
 Inner docker container run
 `bundle exec rubocop -a`
+
+
+## Run tests
+
+Run those commands to prepare database for test and execute unit tests.
+
+`bundle exec rake db:test:prepare`
+`bundle exec rake test`
+
+or execute `test.sh`
