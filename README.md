@@ -22,3 +22,19 @@ Please fork this repository on Github and push your code up to your own fork on 
 If you have any questions, email Brady at bradyb@electionbuddy.com.
 
 Good luck!
+
+## Run Docker
+
+Run bash
+`docker exec -it <container_id> rails c`
+
+Inner cointainer run
+`bin/rails c`
+
+## Run rubocop
+
+Run bash in order to access rails container command line:
+`docker exec -it d6531b239d51  bash`
+
+Inner docker container run
+`bundle exec rubocop -a`

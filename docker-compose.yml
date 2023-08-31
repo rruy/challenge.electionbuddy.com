@@ -1,0 +1,23 @@
+services:
+  web:
+    build: .
+    container_name: election_buddy
+    ports:
+      - "3000:3000"
+    environment:
+      - PASSENGER_APP_ENV=development
+    volumes:
+      - .:/usr/src/app
+    command: rails s -b 0.0.0.0
+      - .:/home/app/webapp
+    networks:
+      - back-end
+    command: rails s -b 0.0.0.0
+  db:
+    container_name: db
+    image: postgres:9.4
+    networks:
+      - back-end
+networks:
+  back-end:
+    driver: bridge
