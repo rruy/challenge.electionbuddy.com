@@ -14,9 +14,13 @@ gem 'sass-rails', '> 5.0'
 gem 'sqlite3', '> 1.3.6'
 gem 'turbolinks', '> 5'
 gem 'uglifier', '>= 1.3.0'
+gem "matrix", "~> 0.4.2"
+gem 'net-smtp'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'pry'
+  gem 'pry-nav'
 end
 
 group :development do
@@ -30,6 +34,7 @@ end
 group :test do
   gem 'capybara', '>= 2.15'
   gem 'webdrivers'
+  gem 'shoulda'
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

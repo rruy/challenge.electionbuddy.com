@@ -20,7 +20,9 @@ class ElectionsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create election' do
     assert_difference('Election.count') do
-      post elections_url, params: { election: { end_at: @election.end_at, name: @election.name, settings: @election.settings, start_at: @election.start_at } }
+      post elections_url,
+           params: { election: { end_at: @election.end_at, name: @election.name, settings: @election.settings,
+                                 start_at: @election.start_at } }
     end
 
     assert_redirected_to election_url(Election.last)
@@ -37,7 +39,9 @@ class ElectionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should update election' do
-    patch election_url(@election), params: { election: { end_at: @election.end_at, name: @election.name, settings: @election.settings, start_at: @election.start_at } }
+    patch election_url(@election),
+          params: { election: { end_at: @election.end_at, name: @election.name, settings: @election.settings,
+                                start_at: @election.start_at } }
     assert_redirected_to election_url(@election)
   end
 

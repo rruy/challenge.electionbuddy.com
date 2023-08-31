@@ -21,7 +21,8 @@ class VotersControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create voter' do
     assert_difference('Voter.count') do
-      post election_voters_url(election_id: @election), params: { voter: { election_id: @voter.election_id, email: @voter.email, name: @voter.name } }
+      post election_voters_url(election_id: @election),
+           params: { voter: { election_id: @voter.election_id, email: @voter.email, name: @voter.name } }
     end
 
     assert_redirected_to voter_url(Voter.last)
@@ -38,7 +39,8 @@ class VotersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should update voter' do
-    patch voter_url(@voter), params: { voter: { election_id: @voter.election_id, email: @voter.email, name: @voter.name } }
+    patch voter_url(@voter),
+          params: { voter: { election_id: @voter.election_id, email: @voter.email, name: @voter.name } }
     assert_redirected_to voter_url(@voter)
   end
 

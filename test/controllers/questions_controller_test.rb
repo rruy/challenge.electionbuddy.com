@@ -21,7 +21,8 @@ class QuestionsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create question' do
     assert_difference('Question.count') do
-      post election_questions_url(election_id: @election), params: { question: { answer_ids: @question.answer_ids, name: @question.name } }
+      post election_questions_url(election_id: @election),
+           params: { question: { answer_ids: @question.answer_ids, name: @question.name } }
     end
 
     assert_redirected_to question_url(Question.last)
