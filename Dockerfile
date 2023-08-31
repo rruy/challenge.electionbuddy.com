@@ -1,4 +1,4 @@
-FROM ruby:3.0.2
+FROM ruby:3.2.2
 LABEL maintainer="bradyb@electionbuddy.com"
 
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
