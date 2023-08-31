@@ -26,7 +26,7 @@ class VotersController < ApplicationController
   # POST /voters
   # POST /voters.json
   def create
-    @voter = Voter.new(voter_params.merge(election: @election))
+    @voter = Voter.new(voter_params.merge(election: @election, author_user_id: current_user.id))
 
     respond_to do |format|
       if @voter.save
@@ -73,6 +73,8 @@ class VotersController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_voter
     @voter = Voter.find(params[:id])
+    @voter.author_user_id = current_user.id
+    @voter
   end
 
   def set_election

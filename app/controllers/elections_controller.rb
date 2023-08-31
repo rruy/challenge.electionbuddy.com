@@ -25,7 +25,7 @@ class ElectionsController < ApplicationController
   # POST /elections
   # POST /elections.json
   def create
-    @election = Election.new(election_params.merge(user: current_user))
+    @election = Election.new(election_params.merge(user: current_user, author_user_id: current_user.id))
 
     respond_to do |format|
       if @election.save
@@ -67,6 +67,8 @@ class ElectionsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_election
     @election = Election.find(params[:id])
+    @election.author_user_id = current_user.id
+    @election
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
