@@ -12,13 +12,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_190_205_170_919) do
-  create_table 'answers', force: :cascade do |t|
-    t.string 'name'
-    t.integer 'question_id'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['question_id'], name: 'index_answers_on_question_id'
+ActiveRecord::Schema.define(version: 2023_08_30_184841) do
+  create_table "answers", force: :cascade do |t|
+    t.string "name"
+    t.integer "question_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
+  create_table "audits", force: :cascade do |t|
+    t.string "auditable_type", null: false
+    t.integer "auditable_id", null: false
+    t.integer "author_user_id"
+    t.string "author_user_email"
+    t.string "event"
+    t.json "trail"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["auditable_type", "auditable_id"], name: "index_audits_on_auditable"
   end
 
   create_table 'elections', force: :cascade do |t|
