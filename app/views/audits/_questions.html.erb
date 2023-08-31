@@ -1,8 +1,5 @@
-<% require 'json' %>
-<p id="notice"><%= notice %></p>
-
-<h1>Audits</h1>
-
+<% if @audits_questions.present? && @audits_questions.size.positive? %>
+<h2>Questions</h2>
 <table>
   <thead>
     <tr>
@@ -16,7 +13,7 @@
   </thead>
 
   <tbody>
-    <% @audits.each do |audit| %>
+    <% @audits_questions.each do |audit| %>
       <tr>
         <td><%= audit.id %></td>
         <td><%= audit.auditable_type %></td>
@@ -28,13 +25,4 @@
     <% end %>
   </tbody>
 </table>
-
-<% if @election.present? %>
-  <%= render :partial => 'votes', :locals => { :audits_votes => @audits_votes } %>
-  <%= render :partial => 'questions', :locals => { :audits_questions => @audits_questions } %>
-  <%= render :partial => 'answers', :locals => { :audits_answers => @audits_answers } %>
 <% end %>
-
-<br/>
-<%= link_to 'Elections', elections_path %> |
-<%= link_to 'Log out', destroy_user_session_path, method: :delete %>

@@ -48,3 +48,21 @@ Run those commands to prepare database for test and execute unit tests.
 `bundle exec rake test`
 
 or execute `test.sh`
+
+## Audits
+
+Access this url when you need to view all audits of all elections
+
+ `http://www.localhost:3000/audits`
+
+Example of output:
+
+![Alt text](/public/audit_all.png?raw=true "Audit All")
+
+To see the specific audits for an election access this url:
+
+`http://www.localhost:3000/elections\<election_id>\audits`:
+
+Example of output:
+
+![Alt text](/public/audit_tree.png?raw=true "Audit Tree")
